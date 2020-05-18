@@ -157,6 +157,7 @@
 <script>
 import multiselectMixin from './multiselectMixin'
 import pointerMixin from './pointerMixin'
+import axios from 'axios'
 
 export default {
   name: 'vue-multiselect',
