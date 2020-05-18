@@ -386,7 +386,6 @@ export default {
           params: this.params
         }).then(response => {
           this.options = response.data;
-          res();
         });
       });
     }
