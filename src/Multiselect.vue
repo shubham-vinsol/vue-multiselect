@@ -295,11 +295,11 @@ export default {
       default: true
     },
     url: {
-      type: 'String',
+      type: String,
       default: ''
     },
     params: {
-      type: 'String',
+      type: String,
       default: ''
     },
     tabindex: {
@@ -380,13 +380,13 @@ export default {
   },
   methods: {
     refreshOptions() {
-      debugger
-      axios.get(this.href, {
-        params: this.params
-      }).then(response => {
-        debugger
-        this.options = response.data;
-        res();
+      return new Promise(()=> {
+        axios.get(this.href, {
+          params: this.params
+        }).then(response => {
+          this.options = response.data;
+          res();
+        });
       });
     }
   }
