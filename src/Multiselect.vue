@@ -382,7 +382,7 @@ export default {
   methods: {
     refreshOptions() {
       return new Promise(()=> {
-        axios.get(this.href, {
+        axios.get(this.url, {
           params: this.params
         }).then(response => {
           this.options = response.data;
