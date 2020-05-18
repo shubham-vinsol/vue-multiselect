@@ -381,11 +381,13 @@ export default {
   },
   methods: {
     refreshOptions() {
-      return new Promise(()=> {
+      $('[data-behavior="ajax-loader"]').addClass('ajax-send');
+      return new Promise(() => {
         axios.get(this.url, {
           params: this.params
         }).then(response => {
           this.options = response.data;
+          $('[data-behavior="ajax-loader"]').removeClass('ajax-send');
         });
       });
     }
