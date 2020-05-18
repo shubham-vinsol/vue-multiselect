@@ -294,6 +294,14 @@ export default {
       type: Boolean,
       default: true
     },
+    url: {
+      type: 'String',
+      default: ''
+    },
+    params: {
+      type: 'String',
+      default: ''
+    },
     tabindex: {
       type: Number,
       default: 0
@@ -368,6 +376,18 @@ export default {
           ? this.isOpen
           : true)
       )
+    }
+  },
+  methods: {
+    refreshOptions() {
+      debugger
+      axios.get(this.href, {
+        params: this.params
+      }).then(response => {
+        debugger
+        this.options = response.data;
+        res();
+      });
     }
   }
 }
